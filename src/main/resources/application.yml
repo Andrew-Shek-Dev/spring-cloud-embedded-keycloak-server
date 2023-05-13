@@ -1,0 +1,18 @@
+spring:
+#  main:
+#    allow-bean-definition-overriding: true
+  jpa:
+    defer-datasource-initialization: true
+    database-platform: org.hibernate.dialect.PostgreSQL82Dialect
+  datasource:
+    url: jdbc:postgresql://keycloak_db:5432/${POSTGRES_DB}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+
+keycloak:
+  server:
+    context-path: /auth
+    username: ${KEYCLOAK_ADMIN_USER}
+    password: ${KEYCLOAK_ADMIN_PASSWORD}
+    context-redirect: true
+
